@@ -1,15 +1,90 @@
 <html>
   <head>
     <title>Chris &amp; Jo's Wedding</title>
-    <link rel="stylesheet" href="/resources/awsm.css">
+    <link rel="stylesheet" href="/resources/almond.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      nav ul {
+          list-style: none;
+      }
+
+      nav ul li {
+          display: inline;
+      }
+
+      nav ul li:hover {
+          background: #ccc;
+      }
+
+      article {
+          position: relative;
+          min-height: 250px;
+      }
+
+      section {
+          background: white;
+          min-height: 250px;
+          position: absolute;
+          width: 100%;
+          border: 2px;
+      }
+
+      section:target {
+          z-index: 1;
+      }
+    </style>
   </head>
   <body>
-    <h1>Chris &amp Jo's Wedding</h1>
-    BANNER WITH DATE AND LOCATION
-    INTRO/ABOUT US TAB
-    RSVP FORM: SHOULD POST TO SOME EMAIL-SENDING SERVICE, OVERRIDDEN BY JS THAT CALLS SOME API
-    - the override can read values from a URL token, like name, email from, email to, etc.
-    We can show a bare-bones site
-  </Body>
+    <header>
+      <center>
+        <h1>Chris &amp; Jo are getting married!</h1>
+        <h2>
+          <p>Saturday 11th December</p>
+          <p>
+            <a href="#map">
+              <address>
+                Shustoke Barns, Coleshill, Birmingham
+              </address>
+            </a>
+          </p>
+        </h2>
+      </center>
+    </header>
+
+    <center>
+      <form>
+        <!--
+            SHOULD POST TO SOME EMAIL-SENDING SERVICE OVERRIDDEN BY JS THAT
+            CALLS SOME API - the override can read values from a URL token, like
+            name, email from, email to, etc.
+            We can show a bare-bones site otherwise
+          -->
+        <input type="submit" value="RSVP" />
+      </form>
+    </center>
+
+    <foo>
+      Something about Covid situation - hoping that everyone can come but
+      situation is ever changing blah blah
+    </foo>
+
+    <article>
+      <nav>
+        <ul class="tabs group">
+          <li><a href="#intro"   >About Us</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#map"     >Map     </a></li>
+        </ul>
+      </nav>
+      <section id="intro">
+        About us foo bar
+      </section>
+      <section id="schedule">
+        On the Day schedule (more coming)
+      </section>
+      <section id="map">
+        Put a map here
+      </section>
+    </article>
+  </body>
 </html>
