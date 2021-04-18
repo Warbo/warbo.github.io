@@ -5,7 +5,22 @@
 header {
     background: var(--primary-bg);
     /* box-shadow: inset 0px 0px 10px 10px var(--secondary-bg); */
-    padding: 10px;
+    padding: 1rem;
+}
+
+article {
+    background: var(--primary-bg);
+    /* box-shadow: inset 0px 0px 10px 10px var(--secondary-bg); */
+    padding: 1rem;
+}
+
+header nav a {
+    text-decoration: none !important;
+    margin: 0 2rem;
+}
+
+header center a {
+    text-decoration: none !important;
 }
 
 header center {
@@ -15,7 +30,7 @@ header center {
     min-width: */
 }
 
-input.red-button       {
+.red-button       {
     background-color: var(--red);
 }
 
@@ -27,15 +42,7 @@ input.red-button:focus, input.red-button:hover             {
 
 header > nav {
     display: flex;
-    justify-content: space-between;
-}
-
-nav > label {
-
-}
-
-article {
-    /* padding: 0 1rem; */
+    justify-content: flex-end;
 }
 
 section {

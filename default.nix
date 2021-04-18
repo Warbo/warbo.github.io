@@ -29,7 +29,9 @@ with rec {
         ${readFile ./head.html}
         <body>
           ${readFile ./header.html}
-          ${readFile bodyPath}
+          <article>
+            ${readFile bodyPath}
+          </article>
         </body>
       </html>
     '')
@@ -42,4 +44,4 @@ with rec {
     })
     compiled;
 };
-attrsToDirs' "wedding-site" (pages /*// { resources = ./resources; }*/)
+attrsToDirs' "wedding-site" (pages // { "rsvp.html" = rsvp; })
