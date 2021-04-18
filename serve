@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 set -e
-python -m SimpleHTTPServer 8888
+D=$(nix-build --show-trace)
+inDir "$D" python -m SimpleHTTPServer 8880
