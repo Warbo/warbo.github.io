@@ -43,6 +43,7 @@ input.red-button:focus, input.red-button:hover             {
 header > nav {
     display: flex;
     justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 section {
