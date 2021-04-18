@@ -6,16 +6,17 @@
 /************************************************************/
 :root {
   /* Colors */
-  --primaryH: 210;
-  --primaryS: 50%;
-  --primaryL: 40%;
-  --primary-bg: #fff;
-  --secondaryH: 0;
-  --secondaryS: 0%;
-  --secondaryL: 13%;
-  --secondary-bg: #fff;
+  --primaryH: 240;
+  --primaryS: 25%;
+  --primaryL: 73%;
+  --primary-bg: #FFFFFF;
+  --secondaryH: 26;
+  --secondaryS: 58%;
+  --secondaryL: 8%;
+  --secondary-bg: #F5F5FF;
+  /*--secondary-bg: #76151C;*/
   /* Font */
-  --font-family: Helvetica, Arial, sans-serif;
+  --font-family: Calibri, Helvetica, Arial, sans-serif;
   --font-size-root: 16px;
   --font-weight-bolder: 700;
   --font-weight-bold: 400;
@@ -62,14 +63,6 @@ body {
   font-size: 1rem;
   margin: auto auto;
   padding: 1rem; }
-
-@media all and (min-width: 1024px) {
-  body {
-    max-width: 920px; } }
-
-@media all and (min-width: 1200px) {
-  body {
-    max-width: 1080px; } }
 
 :focus {
   outline: 1px dashed var(--primary);

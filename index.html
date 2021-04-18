@@ -2,40 +2,18 @@
   <head>
     <title>Chris &amp; Jo's Wedding</title>
     <link rel="stylesheet" href="/resources/almond.css">
+    <link rel="stylesheet" href="/resources/custom.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-      nav ul {
-          list-style: none;
-      }
-
-      nav ul li {
-          display: inline;
-      }
-
-      nav ul li:hover {
-          background: #ccc;
-      }
-
-      article {
-          position: relative;
-          min-height: 250px;
-      }
-
-      section {
-          background: white;
-          min-height: 250px;
-          position: absolute;
-          width: 100%;
-          border: 2px;
-      }
-
-      section:target {
-          z-index: 1;
-      }
-    </style>
   </head>
   <body>
     <header>
+      <nav>
+        <label for="about-toggle"><a href="#about">Home</a></label>
+        <label for="schedule-toggle"><a href="#schedule">Schedule</a></label>
+        <label for="map-toggle"><a href="#map">Venue</a></label>
+        <label for="acc-toggle"><a href="#accommodation">Accommodation</a></label>
+      </nav>
+
       <center>
         <h1>Chris &amp; Jo are getting married!</h1>
         <h2>
@@ -48,43 +26,112 @@
             </a>
           </p>
         </h2>
+        <form>
+          <!--
+              GOOGLE FORM
+              SHOULD POST TO SOME EMAIL-SENDING SERVICE OVERRIDDEN BY JS THAT
+              CALLS SOME API - the override can read values from a URL token, like
+              name, email from, email to, etc.
+              We can show a bare-bones site otherwise
+            -->
+          <input class="red-button" type="submit" value="RSVP" />
+        </form>
       </center>
     </header>
-
-    <center>
-      <form>
-        <!--
-            SHOULD POST TO SOME EMAIL-SENDING SERVICE OVERRIDDEN BY JS THAT
-            CALLS SOME API - the override can read values from a URL token, like
-            name, email from, email to, etc.
-            We can show a bare-bones site otherwise
-          -->
-        <input type="submit" value="RSVP" />
-      </form>
-    </center>
-
-    <foo>
-      Something about Covid situation - hoping that everyone can come but
-      situation is ever changing blah blah
-    </foo>
-
     <article>
-      <nav>
-        <ul class="tabs group">
-          <li><a href="#intro"   >About Us</a></li>
-          <li><a href="#schedule">Schedule</a></li>
-          <li><a href="#map"     >Map     </a></li>
-        </ul>
-      </nav>
-      <section id="intro">
-        About us foo bar
+      <input type="radio" name="tab" id="about-toggle" checked />
+      <section id="about">
+        <foo>
+          Something about Covid situation - hoping that everyone can come but
+          situation is ever changing blah blah
+        </foo>
+        You should find everything you need on this website from booking
+        accommodation, to how to get here and the schedule for the day.
+
       </section>
+
+      <input type="radio" name="tab" id="schedule-toggle" />
       <section id="schedule">
-        On the Day schedule (more coming)
+        <h2>Schedule of Events</h2>
+
+        <ul>
+          <li>13:30 - Guests arrive!</li>
+          <li>14:00 - We say "I do!"</li>
+          <li>14:30 - Drinks and canape reception</li>
+          <li>16:00 - Dinner</li>
+          <li>18:00 - Speeches & Toasts</li>
+          <li>19:00 - Evening guests arrive</li>
+          <li>00:45 - Bar closes</li>
+        </ul>
       </section>
-      <section id="map">
-        Put a map here
+
+      <input type="radio" name="tab" id="map-toggle" />
+      <section id="map" style="min-width: 800px; min-height: 600px;">
+        <h2>Venue</h2>
+        <div id="map-columns">
+          <div id="map-details">
+            <h3>Address</h3>
+            <address>
+              Shustoke Barns<br />
+              Coleshill Road<br />
+              Shustoke<br />
+              Coleshill<br />
+              Warwickshire<br />
+              B46 2BL
+            </address>
+
+            <h3>Parking</h3>
+            Parking is available onsite at Shustoke Barns
+
+            <h3>Restrictions (important - please read!)</h3>
+            <p>
+              <strong>Confetti</strong> Please do not bring your own confetti as
+              the venue has strict policies regarding what type can be
+              used. We'll be bringing the confetti to you!
+            </p>
+
+            <p><strong>Alcohol</strong> Please do not bring your own alcoholic
+              beverages to the venue. All drinks consumed on-site must be
+              purchased onsite (we're not kidding - there's a hefty safety
+              deposit which we'll lose if any of our guests break this rule).
+            </p>
+          </div>
+          <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.0697773504635!2d-1.6750736841927711!3d52.51407627981302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870b2042e2fbeb7%3A0xbca1fe484fea0cc!2sShustoke%20Barn!5e0!3m2!1sen!2suk!4v1613216135611!5m2!1sen!2suk"
+              width="800"
+              height="600"
+              frameborder="0"
+              style="border:0; min-width: 800px;"
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0">
+            </iframe>
+          </div>
+        </div>
       </section>
     </article>
+    <script type="text/javascript">
+      // Remove anchors from nav links, since they cause a jump-down
+      document.querySelectorAll('nav > label > a').forEach(
+        function unwrap(el) {
+          const parent  = el.parentNode;
+
+          while (el.firstChild) parent.insertBefore(el.firstChild, el);
+
+          parent.removeChild(el);
+        }
+      );
+
+      // element that will be wrapped
+        var el = document.querySelector('div.wrap_me');
+
+
+
+        // insert wrapper before el in the DOM tree
+
+
+
+    </script>
   </body>
 </html>
