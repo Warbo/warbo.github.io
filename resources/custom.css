@@ -1,0 +1,107 @@
+:root {
+    --red: #A30303;
+}
+
+header {
+    background: var(--primary-bg);
+    /* box-shadow: inset 0px 0px 10px 10px var(--secondary-bg); */
+    padding: 10px;
+}
+
+header center {
+    /*background-image: url("resources/Joanne New 5.png");
+    background-size: cover;
+    min-height: 70rem;
+    min-width: */
+}
+
+input.red-button       {
+    background-color: var(--red);
+}
+
+input.red-button:focus, input.red-button:hover             {
+    background-color: #5C0303 !important;
+    border: 1px solid #AF5E56 !important;
+    outline: 1px #AF5E56 !important;
+}
+
+header > nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav > label {
+
+}
+
+article {
+    /* padding: 0 1rem; */
+}
+
+section {
+    background-color: var(--secondary-bg);
+    color: var(--secondary);
+    border: 2px;
+    /* These are needed for the 'active tab' to cover the others */
+    min-height: 600px;
+    position: absolute;
+    width: 100%;
+}
+
+/* Navigation works like "tabs": we have multiple <section> elements, but only
+ * one is visible at a time. This is achieved by stacking them all on top of
+ * each other, and setting a higher z-index to whichever should be 'visible'.
+ * The nice property of this approach is that the unstyled version just lists
+ * each section one after the other, so the site remains completely usable.
+ *
+ * There are two ways to determine which section should be visible:
+ */
+
+/* If we've navigated to a section via its URL, like #map, then this takes
+ * precedence. We achieve this by using :target and a high z-index.
+ */
+section:target {
+    /*display: block;*/
+    z-index: 2;
+}
+
+/* Otherwise, we fall back on radio buttons to determine which tab is visible.
+ * Each tab follows a radio button with the name 'tab'. Whichever follows the
+ * checked radio button is given a medium z-index (less than the above).
+ */
+input[type="radio"][name="tab"]:checked + section {
+    /*display: block;*/
+    z-index: 1;
+}
+
+/* All other tabs get a low z-index.*/
+section:not(target) {
+    z-index: -1;
+}
+
+
+/* The radio buttons themselves are hidden */
+input[type="radio"][name="tab"] {
+    opacity: 0;
+}
+
+/* Content styling follows */
+
+#map-columns {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#map-columns > div {
+    /*display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;*/
+}
+
+#map-details {
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 20rem;
+    /*min-width: 20rem;*/
+}
