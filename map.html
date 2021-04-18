@@ -1,0 +1,87 @@
+<html>
+  <head>
+  <title>Chris &amp; Jo's Wedding</title>
+  <link rel="stylesheet" href="/resources/almond.css">
+  <link rel="stylesheet" href="/resources/custom.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+  <body>
+    <header>
+  <nav>
+    <label for="about-toggle"><a target="_top" href="index.html">Home</a></label>
+    <label for="schedule-toggle"><a target="_top"  href="schedule.html">Schedule</a></label>
+    <label for="map-toggle"><a target="_top"  href="map.html">Venue</a></label>
+    <!-- label for="acc-toggle"><a target="_top" href="accommodation.html">Accommodation</a></label -->
+  </nav>
+
+  <center>
+    <h1>Chris &amp; Jo are getting married!</h1>
+    <h2>
+      <p>Saturday 11th December</p>
+      <p>
+        <a href="#map">
+          <address>
+            Shustoke Barns, Coleshill, Birmingham
+          </address>
+        </a>
+      </p>
+    </h2>
+    <form>
+      <!--
+          GOOGLE FORM
+          SHOULD POST TO SOME EMAIL-SENDING SERVICE OVERRIDDEN BY JS THAT
+          CALLS SOME API - the override can read values from a URL token, like
+          name, email from, email to, etc.
+          We can show a bare-bones site otherwise
+        -->
+      <input class="red-button" type="submit" value="RSVP" />
+    </form>
+  </center>
+</header>
+
+    <h2>Venue</h2>
+<div id="map-columns">
+  <div id="map-details">
+    <h3>Address</h3>
+    <address>
+      Shustoke Barns<br />
+      Coleshill Road<br />
+      Shustoke<br />
+      Coleshill<br />
+      Warwickshire<br />
+      B46 2BL
+    </address>
+
+    <h3>Parking</h3>
+    Parking is available onsite at Shustoke Barns
+
+    <h3>Restrictions (important - please read!)</h3>
+    <p>
+      <strong>Confetti</strong> Please do not bring your own confetti as
+      the venue has strict policies regarding what type can be
+      used. We'll be bringing the confetti to you!
+    </p>
+
+    <p><strong>Alcohol</strong> Please do not bring your own alcoholic
+      beverages to the venue. All drinks consumed on-site must be
+      purchased onsite (we're not kidding - there's a hefty safety
+      deposit which we'll lose if any of our guests break this rule).
+    </p>
+  </div>
+  <div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.0697773504635!2d-1.6750736841927711!3d52.51407627981302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870b2042e2fbeb7%3A0xbca1fe484fea0cc!2sShustoke%20Barn!5e0!3m2!1sen!2suk!4v1613216135611!5m2!1sen!2suk"
+      width="800"
+      height="600"
+      frameborder="0"
+      style="border:0; min-width: 800px;"
+      allowfullscreen=""
+      aria-hidden="false"
+      tabindex="0">
+    </iframe>
+  </div>
+</div>
+
+  </body>
+</html>

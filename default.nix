@@ -27,4 +27,4 @@ with rec {
     })
     compiled;
 };
-attrsToDirs' "wedding-site" (pages // { resources = ./resources; })
+attrsToDirs' "wedding-site" (pages /*// { resources = ./resources; }*/)
