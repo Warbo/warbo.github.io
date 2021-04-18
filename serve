@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
 D=$(nix-build --show-trace)
+chmod +w ./*.html
 cp -rL result/* ./
 python -m SimpleHTTPServer 8880
