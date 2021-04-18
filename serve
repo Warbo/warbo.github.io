@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 set -e
 D=$(nix-build --show-trace)
-inDir "$D" python -m SimpleHTTPServer 8880
+cp -r result/* ./
+python -m SimpleHTTPServer 8880
