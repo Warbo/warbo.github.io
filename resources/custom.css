@@ -114,15 +114,24 @@ input[type="radio"][name="tab"] {
     flex-direction: row;
 }
 
-#map-columns > div {
-    /*display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;*/
-}
-
 #map-details {
     flex-shrink: 1;
     flex-grow: 1;
     flex-basis: 20rem;
-    /*min-width: 20rem;*/
+}
+
+#map-container {
+    position: relative;
+    padding-bottom: 65.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+#map-container iframe {
+    position: absolute;
+    tttop: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
