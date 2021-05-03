@@ -51,16 +51,31 @@ header a {
 
 .red-button       {
     background-color: var(--red);
+#gifts-page header {
+    background: #000000;
+    background-image: url("/resources/brum-market.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 input.red-button:focus, input.red-button:hover             {
     background-color: #5C0303 !important;
     border: 1px solid #AF5E56 !important;
     outline: 1px #AF5E56 !important;
+#gifts-page header h1 {
+    color: #FFFFFF !important;
+    filter: drop-shadow(0 0 3px #000000) drop-shadow(0 0 3px #000000) drop-shadow(0 0 3px #000000);
 }
 
+#gifts-page header h2, #gifts-page header p {
+    color: #FFFFFF !important;
+    filter: drop-shadow(0 0 4px #000000) drop-shadow(0 0 4px #000000);
 }
 
+#gifts-page header a {
+    color: #FFFFFF !important;
+    filter: drop-shadow(0 0 4px #000000);
 }
 
 }
