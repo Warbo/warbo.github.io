@@ -34,6 +34,10 @@ header a {
     text-decoration: none !important;
 }
 
+header h2 {
+    padding-top: 3.5em;
+}
+
 /* Page-specific header styles. This includes image and contrasting text. */
 
 #index-page header {
