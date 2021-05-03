@@ -38,7 +38,7 @@ header a {
 
 #index-page header {
     background: #000000;
-    background-image: url("/resources/mejo1.jpg");
+    background-image: url("/resources/EDL.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -46,12 +46,12 @@ header a {
 
 #index-page header h1, #index-page header h2, #index-page header p {
     color: #FFFFFF !important;
-    filter: drop-shadow(0 0 4px #000000) drop-shadow(0 0 4px #000000);
+    filter: drop-shadow(0 0 2px #000000) drop-shadow(0 0 2px #000000);
 }
 
 #index-page header a {
     color: #FFFFFF !important;
-    filter: drop-shadow(0 0 4px #000000);
+    filter: drop-shadow(0 0 1px #000000);
 }
 
 #schedule-page header {
