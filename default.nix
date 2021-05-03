@@ -25,7 +25,7 @@ with rec {
 
   compiled = mapAttrs
     (name: bodyPath:  ''
-      <html>
+      <html id="${name}-page">
         ${readFile ./head.html}
         <body>
           ${readFile ./header.html}
