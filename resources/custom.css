@@ -31,11 +31,22 @@ header a {
     text-decoration: none !important;
 }
 
-header center {
-    /*background-image: url("resources/Joanne New 5.png");
+#map-page header {
+    background: #000000;
+    background-image: url("/resources/shustoke-barn-ceremony-room.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
-    min-height: 70rem;
-    min-width: */
+}
+
+#map-page header h1, #map-page header h2, #map-page header p {
+    color: #FFFFFF !important;
+    filter: drop-shadow(0 0 4px #000000) drop-shadow(0 0 4px #000000);
+}
+
+#map-page header a {
+    color: #FFFFFF !important;
+    filter: drop-shadow(0 0 4px #000000);
 }
 
 .red-button       {
