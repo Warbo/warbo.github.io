@@ -96,6 +96,62 @@ article strong {
     color: var(--bold-green);
 }
 
+/* Schedule styles */
+
+#schedule {
+    list-style: none;
+}
+
+#schedule time::before {
+    color: #C30303;
+    content: "\25C9";
+    font-weight: bold;
+    margin-left: -0.66rem;
+}
+
+#schedule li time {
+    color: var(--bold-green);
+    font-weight: bold;
+}
+
+#schedule li {
+    display: flex;
+    border-left: 0.5em groove var(--bold-green);
+}
+
+#schedule li p {
+    margin: auto 0;
+}
+
+.mins30 {
+    height: 3rem;
+}
+
+.mins60 {
+    height: 4rem;
+}
+
+.mins90 {
+    height: 4.66rem;
+}
+
+.mins120 {
+    height: 5.33rem;
+}
+
+.gap {
+    border-left: 0.5em dotted var(--bold-green) !important;
+    height: 3rem;
+    border-image:
+        linear-gradient(
+            to bottom,
+            var(--bold-green),
+            rgba(255, 255, 255, 0)
+        ) 1 100%;
+}
+
+/* Map styles */
+
 #map-columns {
     display: flex;
     flex-wrap: wrap;
