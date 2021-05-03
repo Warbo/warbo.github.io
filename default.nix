@@ -10,7 +10,7 @@ with rec {
 
   rsvp =
     with {
-      url = "http://example.com";
+      url = "https://forms.gle/28jaAHbJXWtiEmwQ9";
     };
     writeText "rsvp.html" ''
       <html>
