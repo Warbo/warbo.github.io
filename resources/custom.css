@@ -19,11 +19,19 @@ nav {
 }
 
 nav a {
-    color: var(--link-red) !important;
     text-decoration: none !important;
     text-transform: uppercase;
     margin: 0 2rem;
     flex: 1 1 0px;
+    font-weight: bold !important;
+}
+
+nav a.odd {
+    color: var(--link-red) !important;
+}
+
+nav a.even {
+    color: var(--bold-green) !important;
 }
 
 header {
