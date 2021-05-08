@@ -43,5 +43,40 @@ with rec {
       value = writeText name content;
     })
     compiled;
+
+  invite = runCommand "invite.html"
+    {
+      buildInputs = [ coreutils python ];
+      raw         = ./invite-imageless.html;
+      image1      = ./invite_files/s.jpg;
+      image2      = ./invite_files/s.svg;
+      splice      = writeText "splice.py" ''
+        from sys import stdin, stdout
+
+        with open('image1.b64', 'r') as f:
+          image1 = f.read()
+        with open('image2.b64', 'r') as f:
+          image2 = f.read()
+
+        stdout.write(
+          stdin.read().replace(
+            'IMAGEDATA1',
+            image1
+          ).replace(
+            'IMAGEDATA2',
+            image2
+          )
+        )
+      '';
+    }
+    ''
+      base64 -w0 < "$image1" > image1.b64
+      base64 -w0 < "$image2" > image2.b64
+      python "$splice" < "$raw" > "$out"
+    '';
+
 };
-attrsToDirs' "wedding-site" (pages // { "rsvp.html" = rsvp; })
+attrsToDirs' "wedding-site" (pages // {
+  "invite.html" = invite;
+  "rsvp.html"   = rsvp;
+})
