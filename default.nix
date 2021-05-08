@@ -43,43 +43,7 @@ with rec {
       value = writeText name content;
     })
     compiled;
-
-  invite = runCommand "invite.msg"
-    {
-      buildInputs = [ coreutils python ];
-      raw         = ./invite.raw;
-      image1      = ./invite_files/w2.png;
-      image2      = ./invite_files/s2.png;
-      splice      = writeText "splice.py" ''
-        from sys import stdin, stdout
-
-        with open('image1.b64', 'r') as f:
-          image1 = f.read()
-        with open('image2.b64', 'r') as f:
-          image2 = f.read()
-
-        stdout.write(
-          stdin.read().replace(
-            'IMAGEDATA1',
-            image1
-          ).replace(
-            'IMAGEDATA2',
-            image2
-          )
-        )
-      '';
-    }
-    ''
-      encode() {
-        base64 | sed -e 's/=/=3D/g' -e 's/$/=/g'
-      }
-      encode < "$image1" > image1.b64
-      encode < "$image2" > image2.b64
-      python "$splice" < "$raw" > "$out"
-    '';
-
 };
 attrsToDirs' "wedding-site" (pages // {
-  "invite.msg" = invite;
-  "rsvp.html"  = rsvp;
+  "rsvp.html" = rsvp;
 })
