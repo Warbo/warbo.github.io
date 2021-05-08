@@ -44,12 +44,12 @@ with rec {
     })
     compiled;
 
-  invite = runCommand "invite.html"
+  invite = runCommand "invite.msg"
     {
       buildInputs = [ coreutils python ];
-      raw         = ./invite-imageless.html;
-      image1      = ./invite_files/s.jpg;
-      image2      = ./invite_files/s.svg;
+      raw         = ./invite.raw;
+      image1      = ./invite_files/w2.png;
+      image2      = ./invite_files/s2.png;
       splice      = writeText "splice.py" ''
         from sys import stdin, stdout
 
@@ -70,13 +70,16 @@ with rec {
       '';
     }
     ''
-      base64 -w0 < "$image1" > image1.b64
-      base64 -w0 < "$image2" > image2.b64
+      encode() {
+        base64 | sed -e 's/=/=3D/g' -e 's/$/=/g'
+      }
+      encode < "$image1" > image1.b64
+      encode < "$image2" > image2.b64
       python "$splice" < "$raw" > "$out"
     '';
 
 };
 attrsToDirs' "wedding-site" (pages // {
-  "invite.html" = invite;
-  "rsvp.html"   = rsvp;
+  "invite.msg" = invite;
+  "rsvp.html"  = rsvp;
 })
